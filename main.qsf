@@ -194,12 +194,14 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
 # -------------------------------------------------------------------------- #
 
 
+set_location_assignment PIN_M9 -to CLOCK
+set_global_assignment -name BDF_FILE src/Contador.bdf
 set_global_assignment -name VERILOG_FILE src/debouncer.v
-set_global_assignment -name BDF_FILE src/contador.bdf
 set_global_assignment -name VERILOG_FILE src/alu.v
 set_global_assignment -name BDF_FILE src/Mux2.bdf
 set_global_assignment -name BDF_FILE src/Registrador.bdf
 set_global_assignment -name VERILOG_FILE src/hexdisplay.v
 set_global_assignment -name BDF_FILE src/main.bdf
-set_location_assignment PIN_M9 -to CLOCK
+set_global_assignment -name MIF_FILE src/main.mif
+set_global_assignment -name QIP_FILE src/rom.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
