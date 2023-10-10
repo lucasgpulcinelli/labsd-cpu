@@ -3,7 +3,7 @@ module alu #(
 )(
     input [WIDTH-1:0] A,
     input [WIDTH-1:0] B,
-    input [1:0] Opcode,
+    input [3:0] Opcode,
 
     output reg [WIDTH-1:0] Result
 );
@@ -13,10 +13,10 @@ wire [WIDTH-1:0] sum = A + BMaybeNegative;
 
 always @(*) begin
     case(Opcode)
-        2'b00: Result = sum;
-        2'b01: Result = {B[WIDTH-2:0], 1'b0};
-        2'b10: Result = sum;
-        2'b11: Result = {1'b0, B[WIDTH-1:1]};
+        4'b0000: Result = sum;
+        4'b0001: Result = {B[WIDTH-2:0], 1'b0};
+        4'b0010: Result = sum;
+        4'b0011: Result = {1'b0, B[WIDTH-1:1]};
         default: Result = {WIDTH{1'b0}};
     endcase
 end
