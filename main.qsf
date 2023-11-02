@@ -195,6 +195,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
 
 
 set_location_assignment PIN_M9 -to CLOCK
+set_global_assignment -name BDF_FILE src/UnidadeDeControle.bdf
 set_global_assignment -name BDF_FILE src/Contador.bdf
 set_global_assignment -name VERILOG_FILE src/debouncer.v
 set_global_assignment -name VERILOG_FILE src/alu.v
